@@ -7,6 +7,6 @@ public class SimpleCalculatorTest {
     @Test
     public void twoPlusThreeShouldEqualFive() {
         SimpleCalculator add = new SimpleCalculator(2,3);
-        assertEquals(5, add.addition());
+        assertEquals(2, add.addition());
     }
 }
