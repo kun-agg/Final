@@ -51,4 +51,11 @@ public class SimpleCalculatorTest {
         SimpleCalculator pow = new SimpleCalculator(3,min.subtraction());
         assertEquals(1, pow.power());
     }
+    @Test
+    public void ThreeTimes7MinusTwoPlusFourAfterShouldEqualTwentyThree() {
+        SimpleCalculator mul = new SimpleCalculator(3,7);
+        SimpleCalculator sub = new SimpleCalculator(mul.multiplication(),2);
+        SimpleCalculator add = new SimpleCalculator(sub.subtraction(), 4);
+        assertEquals(23, add.addition());
+    }
 }
