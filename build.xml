@@ -26,6 +26,9 @@
         <junit printsummary="on" haltonfailure="yes" fork="true">
             <classpath>
                 <path refid="classpath.test"/>
+                <fileset dir="${junit.dir}">
+                    <include name="**/junit.jar" />
+                </fileset>
                 <pathelement location="${test.build.dir}"/>
             </classpath>
             <formatter type="brief" usefile="false" />
