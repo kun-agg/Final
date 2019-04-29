@@ -1,252 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="final" default="all">
-  
-  
-  <property file="final.properties"/>
-  <!-- Uncomment the following property if no tests compilation is needed -->
-  <!-- 
-  <property name="skip.tests" value="true"/>
-   -->
-  
-  <!-- Compiler options -->
-  
-  <property name="compiler.debug" value="on"/>
-  <property name="compiler.generate.no.warnings" value="off"/>
-  <property name="compiler.args" value=""/>
-  <property name="compiler.max.memory" value="700m"/>
-  <patternset id="ignored.files">
-    <exclude name="**/*.hprof/**"/>
-    <exclude name="**/*.pyc/**"/>
-    <exclude name="**/*.pyo/**"/>
-    <exclude name="**/*.rbc/**"/>
-    <exclude name="**/*.yarb/**"/>
-    <exclude name="**/*~/**"/>
-    <exclude name="**/.DS_Store/**"/>
-    <exclude name="**/.git/**"/>
-    <exclude name="**/.hg/**"/>
-    <exclude name="**/.svn/**"/>
-    <exclude name="**/CVS/**"/>
-    <exclude name="**/__pycache__/**"/>
-    <exclude name="**/_svn/**"/>
-    <exclude name="**/vssver.scc/**"/>
-    <exclude name="**/vssver2.scc/**"/>
-  </patternset>
-  <patternset id="library.patterns">
-    <include name="*.war"/>
-    <include name="*.swc"/>
-    <include name="*.zip"/>
-    <include name="*.egg"/>
-    <include name="*.ane"/>
-    <include name="*.jar"/>
-    <include name="*.ear"/>
-    <include name="*.klib"/>
-  </patternset>
-  <patternset id="compiler.resources">
-    <exclude name="**/?*.java"/>
-    <exclude name="**/?*.form"/>
-    <exclude name="**/?*.class"/>
-    <exclude name="**/?*.groovy"/>
-    <exclude name="**/?*.scala"/>
-    <exclude name="**/?*.flex"/>
-    <exclude name="**/?*.kt"/>
-    <exclude name="**/?*.clj"/>
-    <exclude name="**/?*.aj"/>
-  </patternset>
-  
-  <!-- JDK definitions -->
-  
-  <property name="jdk.bin.11" value="${jdk.home.11}/bin"/>
-  <path id="jdk.classpath.11">
-    <fileset dir="${jdk.home.11}">
-      <include name="../jdk-11.0.2!/java.base"/>
-      <include name="../jdk-11.0.2!/java.compiler"/>
-      <include name="../jdk-11.0.2!/java.datatransfer"/>
-      <include name="../jdk-11.0.2!/java.desktop"/>
-      <include name="../jdk-11.0.2!/java.instrument"/>
-      <include name="../jdk-11.0.2!/java.logging"/>
-      <include name="../jdk-11.0.2!/java.management"/>
-      <include name="../jdk-11.0.2!/java.management.rmi"/>
-      <include name="../jdk-11.0.2!/java.naming"/>
-      <include name="../jdk-11.0.2!/java.net.http"/>
-      <include name="../jdk-11.0.2!/java.prefs"/>
-      <include name="../jdk-11.0.2!/java.rmi"/>
-      <include name="../jdk-11.0.2!/java.scripting"/>
-      <include name="../jdk-11.0.2!/java.se"/>
-      <include name="../jdk-11.0.2!/java.security.jgss"/>
-      <include name="../jdk-11.0.2!/java.security.sasl"/>
-      <include name="../jdk-11.0.2!/java.smartcardio"/>
-      <include name="../jdk-11.0.2!/java.sql"/>
-      <include name="../jdk-11.0.2!/java.sql.rowset"/>
-      <include name="../jdk-11.0.2!/java.transaction.xa"/>
-      <include name="../jdk-11.0.2!/java.xml"/>
-      <include name="../jdk-11.0.2!/java.xml.crypto"/>
-      <include name="../jdk-11.0.2!/jdk.accessibility"/>
-      <include name="../jdk-11.0.2!/jdk.aot"/>
-      <include name="../jdk-11.0.2!/jdk.attach"/>
-      <include name="../jdk-11.0.2!/jdk.charsets"/>
-      <include name="../jdk-11.0.2!/jdk.compiler"/>
-      <include name="../jdk-11.0.2!/jdk.crypto.cryptoki"/>
-      <include name="../jdk-11.0.2!/jdk.crypto.ec"/>
-      <include name="../jdk-11.0.2!/jdk.crypto.mscapi"/>
-      <include name="../jdk-11.0.2!/jdk.dynalink"/>
-      <include name="../jdk-11.0.2!/jdk.editpad"/>
-      <include name="../jdk-11.0.2!/jdk.hotspot.agent"/>
-      <include name="../jdk-11.0.2!/jdk.httpserver"/>
-      <include name="../jdk-11.0.2!/jdk.internal.ed"/>
-      <include name="../jdk-11.0.2!/jdk.internal.jvmstat"/>
-      <include name="../jdk-11.0.2!/jdk.internal.le"/>
-      <include name="../jdk-11.0.2!/jdk.internal.opt"/>
-      <include name="../jdk-11.0.2!/jdk.internal.vm.ci"/>
-      <include name="../jdk-11.0.2!/jdk.internal.vm.compiler"/>
-      <include name="../jdk-11.0.2!/jdk.internal.vm.compiler.management"/>
-      <include name="../jdk-11.0.2!/jdk.jartool"/>
-      <include name="../jdk-11.0.2!/jdk.javadoc"/>
-      <include name="../jdk-11.0.2!/jdk.jcmd"/>
-      <include name="../jdk-11.0.2!/jdk.jconsole"/>
-      <include name="../jdk-11.0.2!/jdk.jdeps"/>
-      <include name="../jdk-11.0.2!/jdk.jdi"/>
-      <include name="../jdk-11.0.2!/jdk.jdwp.agent"/>
-      <include name="../jdk-11.0.2!/jdk.jfr"/>
-      <include name="../jdk-11.0.2!/jdk.jlink"/>
-      <include name="../jdk-11.0.2!/jdk.jshell"/>
-      <include name="../jdk-11.0.2!/jdk.jsobject"/>
-      <include name="../jdk-11.0.2!/jdk.jstatd"/>
-      <include name="../jdk-11.0.2!/jdk.localedata"/>
-      <include name="../jdk-11.0.2!/jdk.management"/>
-      <include name="../jdk-11.0.2!/jdk.management.agent"/>
-      <include name="../jdk-11.0.2!/jdk.management.jfr"/>
-      <include name="../jdk-11.0.2!/jdk.naming.dns"/>
-      <include name="../jdk-11.0.2!/jdk.naming.rmi"/>
-      <include name="../jdk-11.0.2!/jdk.net"/>
-      <include name="../jdk-11.0.2!/jdk.pack"/>
-      <include name="../jdk-11.0.2!/jdk.rmic"/>
-      <include name="../jdk-11.0.2!/jdk.scripting.nashorn"/>
-      <include name="../jdk-11.0.2!/jdk.scripting.nashorn.shell"/>
-      <include name="../jdk-11.0.2!/jdk.sctp"/>
-      <include name="../jdk-11.0.2!/jdk.security.auth"/>
-      <include name="../jdk-11.0.2!/jdk.security.jgss"/>
-      <include name="../jdk-11.0.2!/jdk.unsupported"/>
-      <include name="../jdk-11.0.2!/jdk.unsupported.desktop"/>
-      <include name="../jdk-11.0.2!/jdk.xml.dom"/>
-      <include name="../jdk-11.0.2!/jdk.zipfs"/>
-    </fileset>
-  </path>
-  
-  <property name="project.jdk.home" value="${jdk.home.11}"/>
-  <property name="project.jdk.bin" value="${jdk.bin.11}"/>
-  <property name="project.jdk.classpath" value="jdk.classpath.11"/>
-  <!-- Register Custom Compiler Taskdefs -->
-  <property name="javac2.home" value="${idea.home}/lib"/>
-  <path id="javac2.classpath">
-    <fileset dir="${javac2.home}">
-      <include name="javac2.jar"/>
-      <include name="jdom.jar"/>
-      <include name="asm-all*.jar"/>
-      <include name="forms-*.jar"/>
-    </fileset>
-  </path>
-  <target name="register.custom.compilers">
-    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
-    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
-  </target>
-  
-  <!-- Modules -->
-  
-  
-  <!-- Module Final -->
-  
-  <dirname property="module.final.basedir" file="${ant.file}"/>
-  
-  
-  <property name="module.jdk.home.final" value="${project.jdk.home}"/>
-  <property name="module.jdk.bin.final" value="${project.jdk.bin}"/>
-  <property name="module.jdk.classpath.final" value="${project.jdk.classpath}"/>
-  
-  <property name="compiler.args.final" value="-encoding UTF-8 -source 11 -target 11 ${compiler.args}"/>
-  
-  <property name="final.output.dir" value="${module.final.basedir}/out/production/Final"/>
-  <property name="final.testoutput.dir" value="${module.final.basedir}/out/test/Final"/>
-  
-  <path id="final.module.bootclasspath">
-    <!-- Paths to be included in compilation bootclasspath -->
-  </path>
-  
-  <path id="final.module.production.classpath">
-    <path refid="${module.jdk.classpath.final}"/>
-    <pathelement location="${path.variable.maven_repository}/junit/junit/4.12/junit-4.12.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
-  </path>
-  
-  <path id="final.runtime.production.module.classpath">
-    <pathelement location="${final.output.dir}"/>
-    <pathelement location="${path.variable.maven_repository}/junit/junit/4.12/junit-4.12.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
-  </path>
-  
-  <path id="final.module.classpath">
-    <path refid="${module.jdk.classpath.final}"/>
-    <pathelement location="${final.output.dir}"/>
-    <pathelement location="${path.variable.maven_repository}/junit/junit/4.12/junit-4.12.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
-  </path>
-  
-  <path id="final.runtime.module.classpath">
-    <pathelement location="${final.testoutput.dir}"/>
-    <pathelement location="${final.output.dir}"/>
-    <pathelement location="${path.variable.maven_repository}/junit/junit/4.12/junit-4.12.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
-  </path>
-  
-  
-  <patternset id="excluded.from.module.final">
-    <patternset refid="ignored.files"/>
-  </patternset>
-  
-  <patternset id="excluded.from.compilation.final">
-    <patternset refid="excluded.from.module.final"/>
-  </patternset>
-  
-  <path id="final.module.sourcepath">
-    <dirset dir="${module.final.basedir}">
-      <include name="src"/>
-    </dirset>
-  </path>
-  
-  
-  <target name="compile.module.final" depends="compile.module.final.production,compile.module.final.tests" description="Compile module Final"/>
-  
-  <target name="compile.module.final.production" depends="register.custom.compilers" description="Compile module Final; production classes">
-    <mkdir dir="${final.output.dir}"/>
-    <javac2 destdir="${final.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.final}/javac">
-      <compilerarg line="${compiler.args.final}"/>
-      <bootclasspath refid="final.module.bootclasspath"/>
-      <classpath refid="final.module.production.classpath"/>
-      <src refid="final.module.sourcepath"/>
-      <patternset refid="excluded.from.compilation.final"/>
-    </javac2>
-    
-    <copy todir="${final.output.dir}">
-      <fileset dir="${module.final.basedir}/src">
-        <patternset refid="compiler.resources"/>
-        <type type="file"/>
-      </fileset>
-    </copy>
-  </target>
-  
-  <target name="compile.module.final.tests" depends="register.custom.compilers,compile.module.final.production" description="compile module Final; test classes" unless="skip.tests"/>
-  
-  <target name="clean.module.final" description="cleanup module">
-    <delete dir="${final.output.dir}"/>
-    <delete dir="${final.testoutput.dir}"/>
-  </target>
-  
-  <target name="init" description="Build initialization">
-    <!-- Perform any build initialization in this target -->
-  </target>
-  
-  <target name="clean" depends="clean.module.final" description="cleanup all"/>
-  
-  <target name="build.modules" depends="init, clean, compile.module.final" description="build all modules"/>
-  
-  <target name="all" depends="build.modules" description="build all"/>
+<project name="aep19">
+    <property name="main.build.dir" value="build/main"/>
+    <property name="main.src.dir" value="src"/>
+    <property name="test.build.dir" value="build/test"/>
+    <property name="test.src.dir" value="test"/>
+
+    <path id="classpath.test">
+        <pathelement location="lib/junit-4.13-beta-2.jar"/>
+        <pathelement location="lib/hamcrest-core-1.3.jar"/>
+        <pathelement location="${main.build.dir}"/>
+    </path>
+
+    <target name="compile">
+        <mkdir dir="${main.build.dir}"/>
+        <javac srcdir="${main.src.dir}" destdir="${main.build.dir}" includeantruntime="false"/>
+    </target>
+
+    <target name="test-compile" depends="compile">
+        <mkdir dir="${test.build.dir}"/>
+        <javac srcdir="${test.src.dir}" destdir="${test.build.dir}" includeantruntime="false">
+            <classpath refid="classpath.test"/>
+        </javac>
+    </target>
+
+    <target name="test" depends="test-compile">
+        <junit printsummary="on" haltonfailure="yes" fork="true">
+            <classpath>
+                <path refid="classpath.test"/>
+                <pathelement location="${test.build.dir}"/>
+            </classpath>
+            <formatter type="brief" usefile="false" />
+            <batchtest>
+                <fileset dir="${test.src.dir}" includes="**/*Test.java" />
+            </batchtest>
+        </junit>
+    </target>
 </project>
