@@ -28,9 +28,15 @@ public class SimpleCalculatorTest {
         assertEquals(0, div.division());
     }
     
-//     @Test
-//     public void twoModuloThreeShouldEqualTwo() {
-//         SimpleCalculator mod = new SimpleCalculator(2,3);
-//         assertEquals(2, mod.modulo());
-//     }
+    @Test
+    public void twoModuloThreeShouldEqualTwo() {
+        SimpleCalculator mod = new SimpleCalculator(2,3);
+        assertEquals(2, mod.modulo());
+    }
+    
+    @Test
+    public void twoToThePowerThreeShouldEqualEight() {
+        SimpleCalculator pow = new SimpleCalculator(2,3);
+        assertEquals(8, pow.power());
+    }
 }
