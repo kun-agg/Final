@@ -58,4 +58,11 @@ public class SimpleCalculatorTest {
         SimpleCalculator add = new SimpleCalculator(sub.subtraction(), 4);
         assertEquals(23, add.addition());
     }
+    @Test
+    public void NineDividedByTwoToThePowerOneMinus10EqualsNegativeSix() {
+        SimpleCalculator div = new SimpleCalculator(9,2);
+        SimpleCalculator pow = new SimpleCalculator(div.division(),1);
+        SimpleCalculator sub = new SimpleCalculator(pow.power(), 10);
+        assertEquals(-6, sub.subtraction());
+    }
 }
