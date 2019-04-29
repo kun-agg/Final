@@ -15,4 +15,10 @@ public class SimpleCalculatorTest {
         SimpleCalculator sub = new SimpleCalculator(2,3);
         assertEquals(-1, sub.subtraction());
     }
+    
+    @Test
+    public void twoTimesThreeShouldEqualSix() {
+        SimpleCalculator mul = new SimpleCalculator(2,3);
+        assertEquals(6, mul.multiplication());
+    }
 }
