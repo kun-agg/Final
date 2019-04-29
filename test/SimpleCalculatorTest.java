@@ -27,4 +27,10 @@ public class SimpleCalculatorTest {
         SimpleCalculator div = new SimpleCalculator(2,3);
         assertEquals(0, div.division());
     }
+    
+    @Test
+    public void twoModuloThreeShouldEqualTwo() {
+        SimpleCalculator mod = new SimpleCalculator(2,3);
+        assertEquals(2, mod.modulo());
+    }
 }
