@@ -1,3 +1,4 @@
+import java.lang.Math;
 public class SimpleCalculator {
     public final int number1;
     public final int number2;
@@ -25,5 +26,11 @@ public class SimpleCalculator {
 
     public int modulo(){
         return number1%number2;
+    }
+    
+    public int power(){
+        double a = (double) number1;
+        double b = (double) number2;
+        return (int) Math.pow(a,b);
     }
 }
