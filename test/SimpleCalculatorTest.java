@@ -39,4 +39,10 @@ public class SimpleCalculatorTest {
         SimpleCalculator pow = new SimpleCalculator(2,3);
         assertEquals(8, pow.power());
     }
+    @Test
+    public void twoPlusTwoToThePowerThreeShouldEqualFortyEight() {
+        SimpleCalculator add = new SimpleCalculator(2,2);
+        SimpleCalculator pow = new SimpleCalculator(add.addition(),3);
+        assertEquals(64, pow.power());
+    }
 }
