@@ -45,4 +45,10 @@ public class SimpleCalculatorTest {
         SimpleCalculator pow = new SimpleCalculator(add.addition(),3);
         assertEquals(64, pow.power());
     }
+    @Test
+    public void ThreeToThePowerTwoMinusTwoShouldEqualOne() {
+        SimpleCalculator min = new SimpleCalculator(2,2);
+        SimpleCalculator pow = new SimpleCalculator(3,min.subtraction());
+        assertEquals(1, pow.power());
+    }
 }
