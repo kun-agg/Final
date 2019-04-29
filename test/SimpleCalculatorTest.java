@@ -13,6 +13,6 @@ public class SimpleCalculatorTest {
     @Test
     public void twominusThreeShouldEqualNegativeOne() {
         SimpleCalculator sub = new SimpleCalculator(2,3);
-        assertEquals(-1, add.subtraction());
+        assertEquals(-1, sub.subtraction());
     }
 }
