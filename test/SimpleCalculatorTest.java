@@ -21,4 +21,10 @@ public class SimpleCalculatorTest {
         SimpleCalculator mul = new SimpleCalculator(2,3);
         assertEquals(6, mul.multiplication());
     }
+    
+    @Test
+    public void twoDividedByThreeShouldEqualZero() {
+        SimpleCalculator div = new SimpleCalculator(2,3);
+        assertEquals(0, div.division());
+    }
 }
