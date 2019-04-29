@@ -9,4 +9,10 @@ public class SimpleCalculatorTest {
         SimpleCalculator add = new SimpleCalculator(2,3);
         assertEquals(5, add.addition());
     }
+    
+    @Test
+    public void twominusThreeShouldEqualNegativeOne() {
+        SimpleCalculator sub = new SimpleCalculator(2,3);
+        assertEquals(-1, add.subtraction());
+    }
 }
